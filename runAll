@@ -3,3 +3,4 @@
 python cpu_usage.py &
 python  Ram_usage.py &
 python bytesRecieved.py &
+python tempreture.py &

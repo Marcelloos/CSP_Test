@@ -4,16 +4,21 @@ import time
 from cpu_usage import CPU
 from Ram_usage import RAM
 from bytesRecieved import bytesR
-#import Ram_usage
+from tempreture import TEMP
+
 
 cpu_temp = CPU()
 ram_per = RAM()
-bytese = bytesR
+bytese = bytesR()
+temp = TEMP()
 def func1():
     print("start cpu : ")
     cpu_temp.get_Cpu_Persentage()
     ram_per.get_Ram_Persentage()
     bytese.get_bytes_recieved()
+    temp.get_temp
+    
+    
 
 #def func2():
   #  print("start ram : ")

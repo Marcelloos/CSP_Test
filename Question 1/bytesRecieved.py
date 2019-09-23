@@ -7,7 +7,7 @@ from mysql.connector import Error
 class bytesR:
 
     global connection
-    connection = mysql.connector.connect(host='192.168.0.102',  database='statisticsdb', user='pi',password='pi')
+    connection = mysql.connector.connect(host='127.0.0.1',  database='statisticsdb', user='pi',password='pi')
 
     def __init__(self):
         self.bytes_recv = 0 #by default
@@ -16,7 +16,8 @@ class bytesR:
     def set_bytes_Recieved(self):
         bytse = psutil.net_io_counters(pernic=True)
         newtworks = bytse.keys()
-        info = bytse[newtworks[1]]
+        print(newtworks)
+        info = bytse[newtworks[3]]
         self.bytes_recv = info.bytes_recv
             
     
@@ -38,7 +39,7 @@ class bytesR:
             print("Failed to insert record into bytes_recv table {}".format(error))
 
     def get_bytes_recieved(self):
-        for i in range(20):
+        for i in range(400):
             self.set_bytes_Recieved()
             self.intoDb()
             print(self.bytes_recv)
