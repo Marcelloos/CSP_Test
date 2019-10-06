@@ -4,7 +4,7 @@
 '''
 
 
-from flask import Flask, request
+from flask import Flask, request , render_template
 from flaskext.mysql import MySQL
 import time
 import psutil
@@ -34,10 +34,19 @@ bytes_flag = True
 temp_flag = True
 packet_flag = True
 
+
+@app.route('/')
+    def home():
+        return render_template("home.html")
+
+
+
+
 @app.route('/temp')  # if the user types in past the server  and port ip / temp this process will start  
 
   
 def addTemp():
+    
     '''This method works out the tempreture given the amount of seconds that passed that day , 
     this uses a parabola function with the max temprature of 25 and a min of 0 degrees celsius. 
     after a tempreture is found an id statement will check whether its 1 or more degrees higher than the last tempreture pushed to the database.
