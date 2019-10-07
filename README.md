@@ -7,6 +7,10 @@ IMPORTANT: Data Base set up
 ----------------------------
 To set up the data base you need to use the following sql queries to create the databases.
 I used msql workbench to monitor and manage the database.
+It is important to note that I used a local host msql instance and the user name and password was dbuser and the password was dbuserpass.
+Root can also be used but then the code needs to be changed.
+For question 1 all 5 files needs to be aupdated but in question 2 only the top configuration part needs top be updated.
+
 
 
 bytes_recv Table
