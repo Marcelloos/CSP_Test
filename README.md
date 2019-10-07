@@ -37,6 +37,7 @@ CREATE TABLE `packet_lenght` (
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idpacket_lenght`)
 ) 
+
 ram_usage Table
 ----------------
 CREATE TABLE `ram_usage` (
