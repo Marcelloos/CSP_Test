@@ -16,7 +16,7 @@ CREATE TABLE `bytes_recv` (
   `total_bytes` int(11) NOT NULL,
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idbytes_recv`)
-) ENGINE=InnoDB AUTO_INCREMENT=1919 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) 
 
 
 cpu_usage Table
@@ -26,7 +26,7 @@ CREATE TABLE `cpu_usage` (
   `cpu_per` float NOT NULL,
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_cpu_usage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) 
 
 
 packet_lenght Table
@@ -36,8 +36,7 @@ CREATE TABLE `packet_lenght` (
   `packet_len` int(11) DEFAULT NULL,
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idpacket_lenght`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) 
 ram_usage Table
 ----------------
 CREATE TABLE `ram_usage` (
@@ -45,8 +44,7 @@ CREATE TABLE `ram_usage` (
   `ram_usage` float NOT NULL,
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idram_usage`)
-) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
+) 
 
 tempreture Table
 -----------------
@@ -55,8 +53,10 @@ CREATE TABLE `tempreture` (
   `curr_tempreture` int(11) NOT NULL,
   `time_stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idtempreture`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) 
 
+Note:
+------------------
+when using the queries above remember to add the database name infront of the table name for example lets say your database name is obsidion then your query for the temprature table should be :
 
-
-
+CREATE TABLE obsidion.tempreture ( idtempreture int(11) NOT NULL AUTO_INCREMENT, curr_tempreture int(11) NOT NULL, time_stamp datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (idtempreture) )
