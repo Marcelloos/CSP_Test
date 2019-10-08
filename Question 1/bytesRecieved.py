@@ -2,12 +2,13 @@ import time
 import psutil
 import mysql.connector
 from mysql.connector import Error
+import cryptography
 
 
 class bytesR:
 
     global connection
-    connection = mysql.connector.connect(host='127.0.0.1',  database='statisticsdb', user='pi',password='pi')
+    connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root',auth_plugin='mysql_native_password')
 
     def __init__(self):
         self.bytes_recv = 0 #by default
@@ -19,17 +20,17 @@ class bytesR:
         print(newtworks)
         info = bytse[newtworks[3]]
         self.bytes_recv = info.bytes_recv
-            
-    
+
+
     def intoDb(self):
         try:
             if(connection.is_connected()):
                 print("connected")
             cursor = connection.cursor()
-            query ="INSERT INTO bytes_recv (total_bytes) VALUES (%s)" 
+            query ="INSERT INTO bytes_recv (total_bytes) VALUES (%s)"
 
             var = (self.bytes_recv,)
-            
+
             result = cursor.execute(query,var)
             connection.commit()
             print("Record inserted successfully into bytes_recv table")

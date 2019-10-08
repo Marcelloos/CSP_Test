@@ -16,9 +16,9 @@ def func1():
     cpu_temp.get_Cpu_Persentage()
     ram_per.get_Ram_Persentage()
     bytese.get_bytes_recieved()
-    temp.get_temp
-    
-    
+    temp.get_temp()
+
+
 
 #def func2():
   #  print("start ram : ")
@@ -29,11 +29,12 @@ def func1():
    # print("start bytes : ")
    # bytese = bytesR
    # bytese.get_bytes_recieved()
-    
+
 
 
 if __name__=='__main__':
     #cpu_temp = CPU()
+    time.sleep(240)
     p = Pool(5)
     p.map(func1)
    # p1 = Process(target = func1)

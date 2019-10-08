@@ -8,7 +8,7 @@ from datetime import datetime
 class TEMP:
 
     global connection
-    connection = mysql.connector.connect(host='127.0.0.1',  database='statisticsdb', user='pi',password='pi')
+    connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root',auth_plugin='mysql_native_password')
 
     def __init__(self):
         self.temp = 0 #by default

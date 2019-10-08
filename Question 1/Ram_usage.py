@@ -2,9 +2,10 @@ import time
 import psutil
 import mysql.connector
 from mysql.connector import Error
+import cryptography
 
 global connection
-connection = mysql.connector.connect(host='127.0.0.1',  database='statisticsdb', user='pi',password='pi')
+connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root'auth_plugin='mysql_native_password')
 class RAM:
 
     def __init__(self):
@@ -14,17 +15,17 @@ class RAM:
     def set_Ram_Persentage(self):
         ram = psutil.virtual_memory().percent
         self.percentage = ram
-            
-    
+
+
     def intoDb(self):
         try:
             if(connection.is_connected()):
                 print("connected")
             cursor = connection.cursor()
-            query ="INSERT INTO ram_usage (ram_usage) VALUES (%s)" 
+            query ="INSERT INTO ram_usage (ram_usage) VALUES (%s)"
 
             var = (self.percentage,)
-            
+
             result = cursor.execute(query,var)
             connection.commit()
             print("Record inserted successfully into ram_usage table")
@@ -48,5 +49,3 @@ class RAM:
 r = RAM()
 r.get_Ram_Persentage()
 r.close()
-
-

@@ -1,0 +1,15 @@
+.container{
+  max-width: 800px;
+  margin: auto;
+}
+
+.hometitlecont{
+  background-color: lightblue;
+}
+
+.body{
+  background-color: yellow;
+}
+.title{
+  background-color: lightblue;
+}
