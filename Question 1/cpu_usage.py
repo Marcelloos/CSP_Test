@@ -6,7 +6,6 @@ It utilises a quadratic equation to workout the CPU Usage
 
 '''
 
-
 '''These are the imports used within the program'''
 import psutil
 import time
@@ -14,16 +13,16 @@ import mysql.connector
 from mysql.connector import Error
 import cryptography
 
-global connection
-connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root',auth_plugin='mysql_native_password')
-class CPU:
+
+
 
 
 '''This is the class for CPU Usage'''
 class CPU:
-    '''Def init initializes the perce of ram used to 0 as a default'''
+    
     global connection
-    connection = mysql.connector.connect(host='127.0.0.1',  database='statisticsdb', user='pi',password='pi')
+    connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root',auth_plugin='mysql_native_password')
+    '''Def init initializes the perce of ram used to 0 as a default'''
     def __init__(self):
         self.percentage = 0 #by default
 
