@@ -70,7 +70,7 @@ CREATE TABLE obsidion.tempreture ( idtempreture int(11) NOT NULL AUTO_INCREMENT,
 QUESTION 2
 ------------------
 
-For this question I implemented a python flask server that acts as the interface between the processes/services and the database. I used docker to containerize both the database as well as the flask server. I used docker compose to run the docker images togeter. This was harder than I exctpected as I ran into quite a few probelms more on that in the problem section.
+For this question I implemented a python flask server that acts as the interface between the processes/services and the database. I used docker to containerize both the database as well as the flask server. I used docker compose to run the docker images togeter. This was harder than I exctpected as I ran into quite a few probelms more on that in the problem section. I chose Flask for the reason that I have grown very fond of python and wish to learn to use it for web development and since Flask is a upcomming framework and is making waves in the web development field so it felt like the obvious choice for me to use. Futher for containerization I used Docker and a requirements file to make it easier to deploy and ship the whole program as a packadge so setup time and difficulty is at a minimum. 
 
 The Breakdown
 --------------
