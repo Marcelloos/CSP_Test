@@ -22,7 +22,7 @@ import cryptography
 '''Class of ram '''
 class RAM:
     global connection
-    connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root'auth_plugin='mysql_native_password')
+    connection = mysql.connector.connect(host='db',  database='demodbs', user='root',password='root',auth_plugin='mysql_native_password')
 
     '''Def init initializes the perce of ram used to 0 as a default'''
     def __init__(self):
