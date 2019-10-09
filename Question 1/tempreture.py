@@ -1,4 +1,4 @@
-s'''
+'''
 Tempreture tracker 
 Author: Marcell Oosthuizen
 This script keeps track of the tempreture 
