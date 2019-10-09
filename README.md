@@ -16,9 +16,6 @@ To view database in mysql workbench :
     --> Then close to the bottom find the IPv4 adress and use it as the host address in Mysql workbench
     --> Use root as user and root as password
 
-
-
-
 bytes_recv Table
 ---------------------------
 CREATE TABLE `bytes_recv` (
@@ -66,6 +63,16 @@ CREATE TABLE `tempreture` (
   PRIMARY KEY (`idtempreture`)
 ) 
 
+ALSO VERY IMPORTANT
+-------------------
+Another very important aspect is for the bytes recieved algorithm is the fact that you manualy have to set the correct network interface to be tracked in the code, I added a script that will give you a list of network interfaces that can be tracked. From this list you will need to select the interface that you are currently using. a Fix for this will be to amend the program in such a way that it will run for a few seconds to see what interface gets the most traffic and then select that one to be the one that is used to get the data from.
+
+The script is run like the following:
+        
+        --> navigate to the directory cntaining the given question that is in use (with command line or terminal)
+        --> run 'python3 network_test.py'
+        --> this will list in the correct order the network interfaces avalible
+
 
 Question 1
 ------------------
@@ -111,6 +118,11 @@ A full explanation on docker is added to Question 2
 
 QUESTION 2
 ------------------
+
+Important note
+---------------
+I was busy addding a gui to the server so for now , just ignore the buttons since they DO NOT WORK. Rather use the site as it is explained in this readme file
+
 
 For this question I implemented a python flask server that acts as the interface between the processes/services and the database. I used docker to containerize both the database as well as the flask server. I used docker compose to run the docker images togeter. This was harder than I exctpected as I ran into quite a few probelms more on that in the problem section. I chose Flask for the reason that I have grown very fond of python and wish to learn to use it for web development and since Flask is a upcomming framework and is making waves in the web development field so it felt like the obvious choice for me to use. Futher for containerization I used Docker and a requirements file to make it easier to deploy and ship the whole program as a packadge so setup time and difficulty is at a minimum. 
 
