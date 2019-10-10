@@ -136,12 +136,18 @@ def BytesRec(): # if the user types in past the server  and port ip /bytes this 
     This method checks the amount of bytes that is recieved by one of the network interfaces and is then commited to the database ever second
     '''
     global bytes_flag,config
+    bytse = psutil.net_io_counters(pernic=True)
+    networks = list(bytse.keys())   # get a array of the network interfaces
+    highest = 0
+    for i in range(len(networks)):
+    	if bytse[networks[i]].bytes_recv > bytse[networks[highest]].bytes_recv:
+        	highest = i
 
     while bytes_flag:
         conn = mysql.connector.connect(**config)
         bytse = psutil.net_io_counters(pernic=True)
-        newtworks = bytse.keys()   # get a array of the network interfaces
-        info = bytse[newtworks[3]] #[3]for wifi on my machine and [6] for internet
+        networks = list(bytse.keys())   # get a array of the network interfaces
+        info = bytse[networks[highest]] #[3]for wifi on my machine and [6] for internet
         bytes_recv = info.bytes_recv #get the bytes recieved from your selected network interface
         cursor = conn.cursor()
         query ="INSERT INTO bytes_recv (total_bytes) VALUES (%s)"
