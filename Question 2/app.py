@@ -165,7 +165,7 @@ def stopAll():
     '''
     This function is used to stop all the runnin processes on this server. This is done by setting their running condition to false
     '''
-    global cpu_flag,ram_flag,bytes_flag
+    global cpu_flag,ram_flag,bytes_flag,temp_flag
     cpu_flag = False
     bytes_flag = False
     ram_flag = False
@@ -179,7 +179,7 @@ def resetAll():
     This function is used to rest the running conditions for all of the processes on this server. This is done by setting their running condition to true.
     You need to run this statement before attempting to restart any of the processes that "you used stop all" to stop.
     '''
-    global cpu_flag,ram_flag,bytes_flag
+    global cpu_flag,ram_flag,bytes_flag,temp_flag
     cpu_flag = True
     bytes_flag = True
     ram_flag = True
