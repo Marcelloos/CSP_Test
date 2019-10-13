@@ -3,77 +3,7 @@
 <div class = 'hometitlecont'>
   <h1>What is this application about ?</h1>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script type=text/javascript>
-        $(function() {
-          $('a#cpu').bind('click', function() {
-            $.getJSON('/cpu',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-
-<script type=text/javascript>
-        $(function() {
-          $('a#ram').bind('click', function() {
-            $.getJSON('/ram',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-
-<script type=text/javascript>
-        $(function() {
-          $('a#bytes').bind('click', function() {
-            $.getJSON('/bytes',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-
-<script type=text/javascript>
-        $(function() {
-          $('a#temp').bind('click', function() {
-            $.getJSON('/temp',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-<script type=text/javascript>
-        $(function() {
-          $('a#stop').bind('click', function() {
-            $.getJSON('/stop all',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
-<script type=text/javascript>
-        $(function() {
-          $('a#reset').bind('click', function() {
-            $.getJSON('/reset all',
-                function(data) {
-              //do nothing
-            });
-            return false;
-          });
-        });
-</script>
 
 <p>This application is used track the hardware statistics of the running server it is installed on</p>
 <p>This data is then stored in a MYSQL database  for doing inferences lateron </p>
