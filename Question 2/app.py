@@ -54,7 +54,7 @@ def home():
 
 
 
-@app.route('/temp')  # if the user types in past the server  and port ip / temp this process will start
+@app.route('/temp', methods=["POST"])  # if the user types in past the server  and port ip / temp this process will start
 
 
 def addTemp():
@@ -84,7 +84,7 @@ def addTemp():
     return 'This service cant run now , please use the reset all command : /reset all'
 
 
-@app.route('/cpu') # if the user types in past the server  and port ip /cpu this process will start
+@app.route('/cpu', methods=["POST"]) # if the user types in past the server  and port ip /cpu this process will start
 
 def addCpuU():
     '''
@@ -110,7 +110,7 @@ def addCpuU():
         time.sleep(0.5)
     return 'This service cant run now , please use the reset all command : /reset all'
 
-@app.route('/ram') # if the user types in past the server  ip  and port /Ram this process will start
+@app.route('/ram', methods=["POST"]) # if the user types in past the server  ip  and port /Ram this process will start
 
 def RamUSage():
     '''
@@ -130,7 +130,7 @@ def RamUSage():
     return 'This service cant run now , please use the reset all command : /reset all'
 
 
-@app.route('/bytes')
+@app.route('/bytes', methods=["POST"])
 def BytesRec(): # if the user types in past the server  and port ip /bytes this process will start
     '''
     This method checks the amount of bytes that is recieved by one of the network interfaces and is then commited to the database ever second
@@ -191,4 +191,4 @@ def resetAll():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0' port=5000 debug=true)

@@ -16,26 +16,21 @@
 </ul>
 <h2>Here will be buttons to start the given services</h2>
 <div class="btns">
-  <form>
-      <a href=# id=cpu ><button class='btn btn-default'>CPU services</button></a>
-  </form>
-  <form>
-      <a href=# id=ram ><button class='btn btn-default'>RAM services</button></a>
-  </form>
-  <form>
-      <a href=# id=bytes ><button class='btn btn-default'>Bytes services</button></a>
-  </form>
-  <form>
-      <a href=# id=temp ><button class='btn btn-default'>Tempreture services</button></a>
-  </form>
-</div>
-<h2>Use the following to stop and reset services</h2>
-
-<form>
-    <a href=# id=stop ><button class='btn btn-default'>Stop All</button></a>
-</form>
-<form>
-    <a href=# id=reset ><button class='btn btn-default'>Reset All</button></a>
-</form>
+    <form action="/cpu" method="post">
+        <input type="submit" value="CPU Service">
+    </form>
+	
+	<form action="/ram" method="post">
+        <input type="submit" value="Ram service">
+    </form>
+	
+	<form action="/bytes" method="post">
+        <input type="submit" value="Bytes service">
+    </form>
+	
+	<form action="/temp" method="post">
+        <input type="submit" value="Tempreture Service">
+    </form>
+	
 
 {% endblock %}
